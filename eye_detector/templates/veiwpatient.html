@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Submission</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Changed font */
+            margin: 20px;
+            text-align: center;
+            background-color: #f0f0f0;
+            font-size: 16px;
+        }
+
+        table {
+         width: 80%; /* Adjust width as needed */
+          margin: 20px auto; /* Center the table */
+           border-collapse: collapse; /* Collapse borders */
+            border: 1px solid #ccc; /* Border color */}
+
+
+/* Table header styling */
+        th {
+           background-color: #f2f2f2; /* Light gray background */
+           color: #333; /* Dark text color */
+           padding: 10px 15px; /* Padding inside header cells */
+           border-bottom: 2px solid #ddd; /* Bottom border */
+           }
+
+/* Table cell styling */
+        td {
+          padding: 8px 15px; /* Padding inside cells */
+          text-align: center; /* Align text to the left */
+           border-bottom: 1px solid #ddd; /* Bottom border */
+            }
+
+
+            nav {
+            background-color: #444;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-size: 16px; /* Adjusted font size */
+        }
+
+        nav a:hover {
+            background-color: #555;
+        }
+
+    </style>
+</head>>
+<body>
+    <h2> Veiw Patients </h2>
+    <nav>
+        <a href="Home">Home</a>
+        <a href="submission">Photo Submission</a>
+        <a href="form">Patient form</Form></a>
+        <a href="veiwpatient">Pateint table </a>
+    </nav>
+    <table>
+        <tr>
+            <th>patient_id </th>
+            <th>pateint_Name </th>
+            <th>patient_age</th>
+            <th>patient_condition </th>
+        </tr>
+        {% for item in data %}
+        <tr>
+            <td>{{item[0]}} </td>
+            <td>{{item[1]}} </td>
+            <td>{{item[2]}} </td>
+            <td>{{item[3]}} </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Information - Page 1</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Changed font */
+            margin: 20px;
+            text-align: center;
+            background-color: #f0f0f0;
+            font-size: 16px;
+        }
+
+        h1 {
+            color: #333;
+            animation: fadeIn 1.5s ease-out;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        nav {
+            background-color: #444;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            margin-bottom: 20px; /* Added margin-bottom */
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+
+        nav a:hover {
+            background-color: #555;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 15px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            animation: slideIn 1s ease-out;
+        }
+
+        input[type="text"],
+        select,
+        input[type="email"] { /* Applied same styling to email input */
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            transition: border-color 0.3s;
+            font-size: 14px;
+        }
+
+        input:focus,
+        select:focus,
+        input[type="email"]:focus { /* Applied same focus styling to email input */
+            border-color: #4CAF50;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        /* Button for "Go back" */
+        .goback-btn {
+            background-color: #007bff; /* Blue background color */
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 100%;
+            font-size: 16px;
+            margin-top: 10px; /* Added margin-top */
+        }
+
+        .goback-btn:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+
+        /* CSS animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Patient Information</h1>
+    </header>
+
+    <nav>
+        <a href="Home">Home</a>
+        <a href="submission">Photo Submission</a>
+        <a href="form">Patient form</Form></a>
+        <a href="veiwpatient">Pateint table </a>
+    </nav>
+
+    <form id="patientform" action="/dodatabase" method="post" enctype="multipart/form-data">
+        <label for="patientName">Patient Name:</label>
+        <input type="text" id="patientName" name="patientName" required>
+    
+        <label for="patientID">Patient ID:</label>
+        <input type="text" id="patientID" name="patientID" required>
+    
+        <label for="patientGender">Patient Gender:</label>
+        <select id="patientGender" name="patientGender" required>
+            <option value="">Select Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select>
+    
+        <label for="patientage">Patient Age:</label>
+        <input type="number" id="patientage" name="patientage" required>
+    
+        <label for="patientcondition">Patient Condition:</label>
+        <input type="text" id="patientcondition" name="patientcondition" required>
+    
+        <input type="submit" value="Next">
+    </form>
+
+   
+
+    <script>
+        // JavaScript code for handling form submission
+        document.getElementById('patientFormPage1').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // Accessing form elements
+            var patientName = document.getElementById('pname').value;
+            var patientID = document.getElementById('pID').value;
+            var patientGender = document.getElementById('pgender').value;
+            var patientEmail = document.getElementById('pemail').value;
+            // Redirect to the next page
+            window.location.href = 'photo_submission.html?pname=' + patientName + '&pID=' + patientID + '&pgender=' + patientGender + '&pemail=' + patientEmail;
+        });
+
+        // JavaScript function for "Go back" button
+        function goBack() {
+            window.location.href = '5.html'; // Redirect to 5.html
+        }
+    </script>
+</body>
+</html>

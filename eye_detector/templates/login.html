@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Information Submission</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Changed font */
+            margin: 20px;
+            text-align: center;
+            background-color: #f0f0f0;
+            font-size: 16px;
+        }
+
+        h1 {
+            color: #333;
+            animation: fadeIn 1.5s ease-out;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        nav {
+            background-color: #444;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+
+        nav a:hover {
+            background-color: #555;
+        }
+
+        .container {
+            width: 300px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .switch-form {
+            text-align: center;
+        }
+
+        .switch-form a {
+            text-decoration: none;
+            color: #007bff;
+            cursor: pointer;
+        }
+
+        .switch-form a:hover {
+            text-decoration: underline;
+        }
+
+        /* CSS animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .signin-button {
+          display: inline-block; /* Display as inline block */
+          background-color: #007BFF; /* Blue background color */
+          color: white; /* White text color */
+         padding: 10px 20px; /* Padding around the text */
+         font-size: 16px; /* Font size */
+          text-decoration: none; /* Remove underline */
+          border-radius: 4px; /* Rounded corners */
+           transition: background-color 0.3s; /* Smooth transition for background color */
+           }
+    </style>
+</head>
+<body>
+    <header>
+        <h1> Log in </h1>
+    </header>
+
+    <nav>
+        <a href="2.html">Home</a>
+        <a href="3.html">Form Management</a>
+        <a href="4.html">Login/Signup</a>
+    </nav>
+
+    <form method="POST" action="/login">
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username"><br>
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password"><br><br>
+        <input type="submit" value="Login">
+    </form>
+    <a href="/signup" class="signin-button">Sign up</a>
+</body>
+</html>
