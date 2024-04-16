@@ -83,24 +83,9 @@
             background-color: #45a049;
         }
 
-        /* Button for "Go back" */
-        .goback-btn {
-            background-color: #007bff; /* Blue background color */
-            color: white;
-            padding: 12px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            width: 100%;
-            font-size: 16px;
-            margin-top: 10px; /* Added margin-top */
-        }
+        
 
-        .goback-btn:hover {
-            background-color: #0056b3; /* Darker blue on hover */
-        }
-
+       
         /* CSS animations */
         @keyframes fadeIn {
             from { opacity: 0; }
@@ -111,6 +96,16 @@
             from { transform: translateY(-50px); opacity: 0; }
             to { transform: translateY(0); opacity: 1; }
         }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
     </style>
 </head>
 <body>
@@ -132,16 +127,9 @@
         <label for="patientID">Patient ID:</label>
         <input type="text" id="patientID" name="patientID" required>
     
-        <label for="patientGender">Patient Gender:</label>
-        <select id="patientGender" name="patientGender" required>
-            <option value="">Select Gender</option>
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-            <option value="other">Other</option>
-        </select>
-    
+        
         <label for="patientage">Patient Age:</label>
-        <input type="number" id="patientage" name="patientage" required>
+        <input type="text" id="patientage" name="patientage" required>
     
         <label for="patientcondition">Patient Condition:</label>
         <input type="text" id="patientcondition" name="patientcondition" required>
@@ -150,24 +138,8 @@
     </form>
 
    
-
-    <script>
-        // JavaScript code for handling form submission
-        document.getElementById('patientFormPage1').addEventListener('submit', function(event) {
-            event.preventDefault();
-            // Accessing form elements
-            var patientName = document.getElementById('pname').value;
-            var patientID = document.getElementById('pID').value;
-            var patientGender = document.getElementById('pgender').value;
-            var patientEmail = document.getElementById('pemail').value;
-            // Redirect to the next page
-            window.location.href = 'photo_submission.html?pname=' + patientName + '&pID=' + patientID + '&pgender=' + patientGender + '&pemail=' + patientEmail;
-        });
-
-        // JavaScript function for "Go back" button
-        function goBack() {
-            window.location.href = '5.html'; // Redirect to 5.html
-        }
-    </script>
+    <footer>
+        <p>&copy; 2024 Sight Inisght, Team Tortrix.</p>
+    </footer>
 </body>
 </html>

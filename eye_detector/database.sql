@@ -2,4 +2,9 @@
 --INSERT INTO patient_info(patient_id, pateint_name, patient_age, patient_condition) VALUES(1,"Ahmed",19,"normal");
 --SELECT * FROM patient_info;
 --CREATE TABLE users (username VARCHAR NOT NULL, password VARCHAR NOT NULL);
-INSERT INTO users(username, password) VALUES( "ahmed", 1234 )
+--INSERT INTO users(username, password) VALUES( "ahmed", 1234 )
+--DROP TABLE patient_qu;
+--DELETE FROM patient_info WHERE patient_condition = "mild";
+DELETE FROM users WHERE username = "Paul";
+DELETE FROM users WHERE username = "nameer";
+DELETE FROM users WHERE username = "usman";

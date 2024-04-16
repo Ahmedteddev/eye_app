@@ -9,7 +9,7 @@ app = Flask(__name__)
 
 # loading model 
 model = load_model('ml_model.h5')
-class_names = ['Mild', 'Moderate', 'No_DR', 'Proliferate_DR', 'Severe']
+condition_name = ['Mild', 'Moderate', 'No_DR', 'Proliferate_DR', 'Severe']
 
 #default/login route 
 @app.route("/")
@@ -51,12 +51,12 @@ def dosignup():
 
 #Home route 
 @app.route("/Home")
-def home():
+def Home():
     return render_template("Home.html")
 
 # Photo submission route 
 @app.route("/submission")
-def submission():
+def Submission():
     return render_template("submission.html")
 
 # patient form 
@@ -66,7 +66,7 @@ def Patientform():
 
 # functionality for patient form 
 @app.route("/dodatabase", methods=("POST",))
-def formal():
+def dopatientform():
     con = None
     try:
         con = sqlite3.connect("patient.db")
@@ -114,13 +114,13 @@ def Veiwpatient():
 
 # funtionlity for the photo submission 
 @app.route('/upload', methods=['POST'])
-def upload():
+def dosubmission():
     uploaded_file = request.files['file']
     img = Image.open(uploaded_file)
     img = img.resize((224, 224))
     img_array = np.array(img) / 255.0
     prediction = model.predict(np.expand_dims(img_array, axis=0))
-    predicted_label = class_names[np.argmax(prediction)]
+    predicted_label = condition_name[np.argmax(prediction)]
     return render_template('result.html', prediction=predicted_label)
 
 
