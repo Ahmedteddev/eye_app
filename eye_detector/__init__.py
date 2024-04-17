@@ -8,7 +8,7 @@ import numpy as np
 app = Flask(__name__)
 
 # loading model 
-model = load_model('ml_model.h5')
+model = load_model('eye_detector/mlmodel.h5')
 condition_name = ['Mild', 'Moderate', 'No_DR', 'Proliferate_DR', 'Severe']
 
 #default/login route 
@@ -21,7 +21,7 @@ def login():
 def dologin():
         username = request.form['username']
         password = request.form['password']
-        con = sqlite3.connect("patient.db")
+        con = sqlite3.connect("eye_detector/patient.db")
         cur = con.cursor()
         user = cur.execute('SELECT * FROM users WHERE username = ? AND password = ?', (username, password)).fetchone()
         con.commit()
@@ -42,7 +42,7 @@ def signup():
 def dosignup():
         username = request.form['username']
         password = request.form['password']
-        conn = sqlite3.connect("patient.db")
+        conn = sqlite3.connect("eye_detector/patient.db")
         cur = conn.cursor()
         cur.execute('INSERT INTO users (username, password) VALUES (?, ?)', (username, password))
         conn.commit()
@@ -69,7 +69,7 @@ def Patientform():
 def dopatientform():
     con = None
     try:
-        con = sqlite3.connect("patient.db")
+        con = sqlite3.connect("eye_detector/patient.db")
     except Error as e:
         return "Error connecting to database:" + str(e)
     
@@ -95,7 +95,7 @@ def dopatientform():
 def Veiwpatient():
     con = None
     try:
-        con = sqlite3.connect("patient.db")
+        con = sqlite3.connect("eye_detector/patient.db")
     except Error as e:
         return "Error connecting to database:" + str(e)
     
